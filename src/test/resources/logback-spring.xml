@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <appender name="SIFT" class="ch.qos.logback.classic.sift.SiftingAppender">
+        <discriminator>
+            <key>federation</key>
+            <defaultValue>service</defaultValue>
+        </discriminator>
+        
+        <sift>
+            <appender name="ROLLING-FILE-${federation}" class="ch.qos.logback.core.rolling.RollingFileAppender">
+                <encoder>
+                    <pattern>${FILE_LOG_PATTERN}</pattern>
+                </encoder>
+
+                <file>/var/log/owMS/${federation}/ms-dsmultiboot.log</file>
+                <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+                    <fileNamePattern>ms-dsmultiboot-%i.log</fileNamePattern>
+                    <minIndex>1</minIndex>
+                    <maxIndex>10</maxIndex>
+                </rollingPolicy>
+
+                <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+                    <maxFileSize>5MB</maxFileSize>
+                </triggeringPolicy>
+            </appender>
+        </sift>
+    </appender>
+    
+    <springProfile name="des">
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <logger name="org.springframework.web" level="ERROR"/>
+        <logger name="cat.owc.reports" level="DEBUG"/>
+        
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+    
+    <springProfile name="test">
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+        <logger name="org.springframework.web" level="ERROR"/>
+        <logger name="cat.owc.reports" level="DEBUG"/>
+        
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+   <springProfile name="prepro">
+        <logger name="org.springframework.web" level="ERROR"/>
+        <logger name="cat.owc.reports" level="INFO"/>
+        
+        <root level="INFO">
+            <appender-ref ref="SIFT"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <logger name="org.springframework.web" level="ERROR"/>
+        <logger name="cat.owc.reports" level="INFO"/>
+        
+        <root level="INFO">
+            <appender-ref ref="SIFT"/>
+        </root>
+    </springProfile>
+</configuration>

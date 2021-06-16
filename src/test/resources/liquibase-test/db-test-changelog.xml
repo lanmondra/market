@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+        <!-- Incloure els canvis de producció -->
+        <include file="liquibase/db-changelog.xml"/>
+
+
+        <!-- Aquí les insercions de dades de prova -->
+        <!-- 
+        <include file="liquibase-test/20200506-000000-report-templates.sql" />
+        <include file="liquibase-test/20200506-035900-poll-and-forms.sql" />
+        <include file="liquibase-test/20200507-224400-block-and-answers.sql" />
+        <include file="liquibase-test/20200508-035600-answers-form-5.sql" />
+        <include file="liquibase-test/20200710-035600-add-match-report-type.sql" />
+        <include file="liquibase-test/20201029-124900-add-colors-test.sql"/>
+        <include file="liquibase-test/20201112-102300-add-portal-poll.sql"/>
+        <include file="liquibase-test/20201119-121000-add-weight-dates-to-test.sql"/>
+        <include file="liquibase-test/20201123-130000-add-dates-rtvaloration-test.sql"/>
+		<include file="liquibase-test/20201127-124100-add-dates-to-test-valorations.sql"/>
+		 -->
+        <!-- Aquest sempre l'ultim. Fa ajustos a les dades de prod per ser usades en test -->
+        <!--  <include file="liquibase-test/99999999-999999-test-adjustments.sql" />  -->
+</databaseChangeLog>

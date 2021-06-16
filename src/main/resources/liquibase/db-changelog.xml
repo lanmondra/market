@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+       xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+       xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
+       http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+       
+        <!-- 
+         <include file="liquibase/20200504-185300-db-creation.sql" />
+        <include file="liquibase/20200504-185400-table-initialization.sql" />
+        <include file="liquibase/20200527-033000-answer-templates.sql" />
+        <include file="liquibase/20200630-230000-block-templates.sql" />
+        <include file="liquibase/20200705-232300-index_fede_name_rt.sql" />
+        <include file="liquibase/20200710-232300-match_report_type.sql" />
+        <include file="liquibase/20200710-232400-index_match_report_type.sql" />
+        <include file="liquibase/20200805-161600-question_answer_type_nullable.sql" />
+        <include file="liquibase/20201009-161600-deleted-in-form.sql" />
+        <include file="liquibase/20201014-161600-new-match-report-types.sql" />
+        <include file="liquibase/20201029-103900-add-colors-table.sql"/>
+        <include file="liquibase/20201030-141400-change-varchar-to-text-tables-answer-op-and-answer-op-template.sql"/>
+		<include file="liquibase/20201103-171200-add-camp-portal-to-poll-table.sql"/>
+        <include file="liquibase/20201106-131200-tipus_resposta_link.sql"/>
+        <include file="liquibase/20201118-130000-add-camp-weigth-to-block.sql"/>
+		<include file="liquibase/20201118-131400-add-camp-weight-to-question.sql"/>
+		<include file="liquibase/20201118-131700-add-camp-has-punctuaction-to-report-template.sql"/>
+		<include file="liquibase/20201118-132000-add-camp-has-punctuation-to-answer-option.sql"/>
+		 <include file="liquibase/20201119-100000-taula_avaluacions.sql"/>
+		 -->		
+       <include file="liquibase/20201203-175500-creatio-db.sql"/>
+       <include file="liquibase/20201203-181400-add-provinces..sql"/>
+       <include file="liquibase/20201203-181500-towns.sql"/>
+       <include file="liquibase/20201217-232000-add-more-tables.sql"/>
+       
+
+
+</databaseChangeLog>
